@@ -15,8 +15,9 @@ public class Main {
         int total = 0;
         int monthlySum = 15_000;
         int months = 0;
+        int finalSum = 2_459_000;
         double percent = 0.01;
-        while (total <= 2_459_000) {
+        while (total <= finalSum) {
             total += (total * percent);
             total += monthlySum;
             months += 1;
@@ -44,7 +45,8 @@ public class Main {
         int birthrate = population / 1_000 * 17;
         int mortality = population / 1_000 * 8;
         int year = 1;
-        while (year <= 10) {
+        int totalYears = 10;
+        while (year <= totalYears) {
             population += birthrate - mortality;
             System.out.println("Год " + year + ", численность населения составляет " + population);
             year += 1;
@@ -56,7 +58,8 @@ public class Main {
         long sum = 15_000L;
         float monthlyPercent = 0.07F;
         int months = 1;
-        while (sum <= 12_000_000) {
+        int finalSum = 12_000_000;
+        while (sum <= finalSum) {
             sum += (sum * monthlyPercent);
             System.out.println("Месяц " + months + ", сумма накоплений равна " + sum + " рублей");
             months += 1;
@@ -68,7 +71,8 @@ public class Main {
         long sum = 15_000L;
         float monthlyPercent = 0.07F;
         int months = 1;
-        while (sum <= 12_000_000) {
+        int finalSum = 12_000_000;
+        while (sum <= finalSum) {
             sum += (sum * monthlyPercent);
             if (months % 6 == 0) {
                 System.out.println("Месяц " + months + ", сумма накоплений равна " + sum + " рублей");
@@ -82,7 +86,8 @@ public class Main {
         long sum = 15_000L;
         float monthlyPercent = 0.07F;
         int months = 1;
-        while (months <= 9 * 12) {
+        int totalMonthsIn9Years = 9 * 12;
+        while (months <= totalMonthsIn9Years) {
             sum += (sum * monthlyPercent);
             if (months % 6 == 0) {
                 System.out.println("Прошло полгода! Сумма накоплений равна " + sum  + " рублей");
@@ -94,7 +99,8 @@ public class Main {
     public static void task7 () {
         System.out.println("Задача 7");
         int fridayDate = 2;
-        while (fridayDate <= 31) {
+        int totalDaysInMonth = 31;
+        while (fridayDate <= totalDaysInMonth) {
             System.out.println("Сегодня пятница, " + fridayDate + "-е число. Необходимо подготовить отчет");
             fridayDate += 7;
         }
@@ -102,9 +108,10 @@ public class Main {
 
     public static void task8 () {
         System.out.println("Задача 8");
-        int beforeCurrentYear = 1822;
-        int afterCurrentYear = 2122;
-        for (int cometYear = 0; cometYear <= afterCurrentYear; cometYear+= 79) {
+        int currentYear = 2022;
+        int beforeCurrentYear = currentYear - 200;
+        int afterCurrentYear = currentYear + 100;
+        for (int cometYear = 0; cometYear <= afterCurrentYear; cometYear += 79) {
             if (cometYear >= beforeCurrentYear) {
                 System.out.println(cometYear);
             }
